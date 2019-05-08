@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {
   StyleSheet,
   Text,
-  TouchableOpacity,
+  TouchableNativeFeedback,
   View,
   FlatList
 } from 'react-native';
@@ -39,7 +39,10 @@ export default class SinglePickerMaterialDialog extends Component {
   keyExtractor = item => String(item.value);
 
   renderItem = ({ item, index }) => (
-    <TouchableOpacity onPress={() => this.onPressItem(item.value)}>
+    <TouchableNativeFeedback 
+      background={TouchableNativeFeedback.Ripple("#ccc")}
+      onPress={() => this.onPressItem(item.value)}
+    >
       <View style={styles.rowContainer}>
         <View style={styles.iconContainer}>
           <Icon
@@ -56,7 +59,7 @@ export default class SinglePickerMaterialDialog extends Component {
           {item.label}
         </Text>
       </View>
-    </TouchableOpacity>
+    </TouchableNativeFeedback>
   );
 
   render() {

@@ -5,7 +5,8 @@ import {
   Modal,
   Text,
   Platform,
-  TouchableHighlight,
+  TouchableNativeFeedback,
+  TouchableHighlight as TouchableNativeFeedback,
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
   View,
@@ -21,14 +22,15 @@ const { height } = Dimensions.get('window');
 // TODO: Stacked full-width buttons
 
 const ActionButton = ({ testID, onPress, colorAccent, label }) => (
-  <TouchableHighlight
+  <TouchableNativeFeedback
     testID={testID}
     style={styles.actionContainer}
-    underlayColor={colors.androidPressedUnderlay}
+    // underlayColor={colors.androidPressedUnderlay}
     onPress={onPress}
+    background={TouchableNativeFeedback.Ripple("#ccc")}
   >
     <Text style={[material.button, { color: colorAccent }]}>{label}</Text>
-  </TouchableHighlight>
+  </TouchableNativeFeedback>
 );
 
 const MaterialDialog = ({
