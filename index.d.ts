@@ -54,6 +54,13 @@ interface Dialog {
   titleColor?: string;
 
   /**
+   * Background color for the dialog
+   * 
+   * Default is #fff
+   */
+  backgroundColor?: string;
+
+  /**
    * Accent color used on the buttons and elements
    *
    * Default is '#51BC78'
