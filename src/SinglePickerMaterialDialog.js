@@ -112,11 +112,8 @@ SinglePickerMaterialDialog.propTypes = {
   }),
   title: PropTypes.string,
   titleColor: PropTypes.string,
-<<<<<<< HEAD
   backgroundColor: PropTypes.string,
-=======
   pickerTextColor: PropTypes.string,
->>>>>>> picker-text-color
   colorAccent: PropTypes.string,
   onCancel: PropTypes.func.isRequired,
   onOk: PropTypes.func.isRequired,
@@ -129,11 +126,8 @@ SinglePickerMaterialDialog.defaultProps = {
   selectedItem: undefined,
   title: undefined,
   titleColor: undefined,
-<<<<<<< HEAD
   backgroundColor: colors.background,
-=======
   pickerTextColor: colors.androidPrimaryTextColor,
->>>>>>> picker-text-color
   colorAccent: colors.androidColorAccent,
   cancelLabel: undefined,
   okLabel: undefined,
