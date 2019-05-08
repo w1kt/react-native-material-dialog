@@ -118,6 +118,7 @@ import { SinglePickerMaterialDialog } from 'react-native-material-dialog';
 | titleColor      | color of the dialog title                                          | 'rgba(0, 0, 0, 0.87)' | string                                               |
 | backgroundColor | color of the dialog background                                     | '#FFFFFF'             | string                                               |
 | colorAccent     | color of the action text                                           | '#51BC78'             | string                                               |
+| pickerTextcolor | color of picker items text                                         | #000000               | string                                               |
 | scrolled        | whether the form is in scrolled mode                               | false                 | bool                                                 |
 
 ## MultiPickerMaterialDialog
@@ -160,6 +161,7 @@ import { MultiPickerMaterialDialog } from 'react-native-material-dialog';
 | titleColor      | color of the dialog title                                          | 'rgba(0, 0, 0, 0.87)' | string                                               |
 | backgroundColor | color of the dialog background                                     | '#FFFFFF'             | string                                               |
 | colorAccent     | color of the action text                                           | '#51BC78'             | string                                               |
+| pickerTextcolor | color of picker items text                                         | #000000               | string                                               |
 | scrolled        | whether the form is in scrolled mode                               | false                 | bool                                                 |
 
 ## References
