@@ -60,6 +60,7 @@ export default class MultiPickerMaterialDialog extends Component {
       <MaterialDialog
         title={this.props.title}
         titleColor={this.props.titleColor}
+        backgroundColor={this.props.backgroundColor}
         colorAccent={this.props.colorAccent}
         visible={this.props.visible}
         okLabel={this.props.okLabel}
@@ -104,6 +105,7 @@ MultiPickerMaterialDialog.propTypes = {
   selectedItems: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
   titleColor: PropTypes.string,
+  backgroundColor: PropTypes.string,
   colorAccent: PropTypes.string,
   onCancel: PropTypes.func.isRequired,
   onOk: PropTypes.func.isRequired,
@@ -116,6 +118,7 @@ MultiPickerMaterialDialog.defaultProps = {
   selectedItems: [],
   title: undefined,
   titleColor: undefined,
+  backgroundColor: colors.background,
   colorAccent: colors.androidColorAccent,
   cancelLabel: undefined,
   okLabel: undefined,
