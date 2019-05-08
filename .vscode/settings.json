@@ -1,9 +1,0 @@
-{
-<<<<<<< HEAD
-   "files.exclude": {
-=======
-  "files.exclude": {
->>>>>>> picker-text-color
-    "src/**/*.js": false
-  },
-}
