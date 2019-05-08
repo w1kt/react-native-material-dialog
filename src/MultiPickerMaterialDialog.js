@@ -50,7 +50,9 @@ export default class MultiPickerMaterialDialog extends Component {
             size={24}
           />
         </View>
-        <Text style={material.subheading}>{item.label}</Text>
+        <Text style={[material.subheading, { color: this.props.pickerTextColor }]}>
+          {item.label}
+        </Text>
       </View>
     </TouchableOpacity>
   );
@@ -105,7 +107,11 @@ MultiPickerMaterialDialog.propTypes = {
   selectedItems: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
   titleColor: PropTypes.string,
+<<<<<<< HEAD
   backgroundColor: PropTypes.string,
+=======
+  pickerTextColor: PropTypes.string,
+>>>>>>> picker-text-color
   colorAccent: PropTypes.string,
   onCancel: PropTypes.func.isRequired,
   onOk: PropTypes.func.isRequired,
@@ -118,7 +124,11 @@ MultiPickerMaterialDialog.defaultProps = {
   selectedItems: [],
   title: undefined,
   titleColor: undefined,
+<<<<<<< HEAD
   backgroundColor: colors.background,
+=======
+  pickerTextColor: colors.androidPrimaryTextColor,
+>>>>>>> picker-text-color
   colorAccent: colors.androidColorAccent,
   cancelLabel: undefined,
   okLabel: undefined,

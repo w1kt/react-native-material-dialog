@@ -147,6 +147,11 @@ interface SinglePickerMaterialDialogStatic extends Dialog {
    * @param selected
    */
   onCancel?(): void;
+
+  /**
+   * Text color for Picker items
+   */
+  pickerTextColor: string
 }
 
 interface MultiPickerMaterialDialogStatic extends Dialog {
@@ -171,6 +176,11 @@ interface MultiPickerMaterialDialogStatic extends Dialog {
    * @param selected
    */
   onCancel?(): void;
+
+  /**
+   * Text color for Picker items
+   */
+  pickerTextColor: string
 }
 
 export class MaterialDialog extends React.Component<MaterialDialogStatic> {}

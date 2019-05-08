@@ -5,7 +5,7 @@ import {
   Text,
   TouchableOpacity,
   View,
-  FlatList,
+  FlatList
 } from 'react-native';
 import { material } from 'react-native-typography';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -22,7 +22,7 @@ export default class SinglePickerMaterialDialog extends Component {
     let selectedIndex;
     if (selectedItem != null) {
       selectedIndex = items.findIndex(
-        item => item.value === selectedItem.value,
+        item => item.value === selectedItem.value
       );
     }
     this.state = { selectedIndex };
@@ -52,7 +52,9 @@ export default class SinglePickerMaterialDialog extends Component {
             size={24}
           />
         </View>
-        <Text style={material.subheading}>{item.label}</Text>
+        <Text style={[material.subheading, { color: this.props.pickerTextColor }]}>
+          {item.label}
+        </Text>
       </View>
     </TouchableOpacity>
   );
@@ -69,7 +71,7 @@ export default class SinglePickerMaterialDialog extends Component {
         scrolled={this.props.scrolled}
         onOk={() =>
           this.props.onOk({
-            selectedItem: this.props.items[this.state.selectedIndex],
+            selectedItem: this.props.items[this.state.selectedIndex]
           })
         }
         cancelLabel={this.props.cancelLabel}
@@ -94,11 +96,11 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   iconContainer: {
-    marginRight: 16,
-  },
+    marginRight: 16
+  }
 });
 
 SinglePickerMaterialDialog.propTypes = {
@@ -106,26 +108,34 @@ SinglePickerMaterialDialog.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
   selectedItem: PropTypes.shape({
     value: PropTypes.any.isRequired,
-    label: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired
   }),
   title: PropTypes.string,
   titleColor: PropTypes.string,
+<<<<<<< HEAD
   backgroundColor: PropTypes.string,
+=======
+  pickerTextColor: PropTypes.string,
+>>>>>>> picker-text-color
   colorAccent: PropTypes.string,
   onCancel: PropTypes.func.isRequired,
   onOk: PropTypes.func.isRequired,
   cancelLabel: PropTypes.string,
   okLabel: PropTypes.string,
-  scrolled: PropTypes.bool,
+  scrolled: PropTypes.bool
 };
 
 SinglePickerMaterialDialog.defaultProps = {
   selectedItem: undefined,
   title: undefined,
   titleColor: undefined,
+<<<<<<< HEAD
   backgroundColor: colors.background,
+=======
+  pickerTextColor: colors.androidPrimaryTextColor,
+>>>>>>> picker-text-color
   colorAccent: colors.androidColorAccent,
   cancelLabel: undefined,
   okLabel: undefined,
-  scrolled: false,
+  scrolled: false
 };
