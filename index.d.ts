@@ -151,7 +151,12 @@ interface SinglePickerMaterialDialogStatic extends Dialog {
   /**
    * Text color for Picker items
    */
-  pickerTextColor: string
+  pickerTextColor: string;
+  
+  /**
+   * color of the Android ripple effect on buttons and list items
+   */
+  androidRippleColor: string;
 }
 
 interface MultiPickerMaterialDialogStatic extends Dialog {
