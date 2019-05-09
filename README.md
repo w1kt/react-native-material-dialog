@@ -105,21 +105,22 @@ import { SinglePickerMaterialDialog } from 'react-native-material-dialog';
 
 ## Props
 
-| Name            | Description                                                        | Default/Required      | Type                                                 |
-| --------------- | ------------------------------------------------------------------ | --------------------- | ---------------------------------------------------- |
-| visible         | shows or hides the dialog                                          | required              | bool                                                 |
-| items           | list of options to choose from                                     | required              | array of objects with a 'label' and 'value' property |
-| selectedItem    | item that will be selected when opening the dialog                 | required              | object with a 'label' and 'value' property           |
-| onCancel        | callback when the dialog is closed or the cancel action is pressed | required              | func                                                 |
-| onOk            | callback when the ok action is pressed                             | undefined             | func                                                 |
-| cancelLabel     | label for the cancel action                                        | 'CANCEL'              | string                                               |
-| okLabel         | label for the ok action                                            | 'OK'                  | string                                               |
-| title           | text for the dialog title                                          | undefined             | string                                               |
-| titleColor      | color of the dialog title                                          | 'rgba(0, 0, 0, 0.87)' | string                                               |
-| backgroundColor | color of the dialog background                                     | '#FFFFFF'             | string                                               |
-| colorAccent     | color of the action text                                           | '#51BC78'             | string                                               |
-| pickerTextcolor | color of picker items text                                         | #000000               | string                                               |
-| scrolled        | whether the form is in scrolled mode                               | false                 | bool                                                 |
+| Name               | Description                                                        | Default/Required      | Type                                                 |
+| ---------------- - | ------------------------------------------------------------------ | --------------------- | ---------------------------------------------------- |
+| visible            | shows or hides the dialog                                          | required              | bool                                                 |
+| items              | list of options to choose from                                     | required              | array of objects with a 'label' and 'value' property |
+| selectedItems      | items that will be selected when opening the dialog                | required              | array of objects with a 'label' and 'value' property |
+| onCancel           | callback when the dialog is closed or the cancel action is pressed | required              | func                                                 |
+| onOk               | callback when the ok action is pressed                             | undefined             | func                                                 |
+| cancelLabel        | label for the cancel action                                        | 'CANCEL'              | string                                               |
+| okLabel            | label for the ok action                                            | 'OK'                  | string                                               |
+| title              | text for the dialog title                                          | undefined             | string                                               |
+| titleColor         | color of the dialog title                                          | 'rgba(0, 0, 0, 0.87)' | string                                               |
+| backgroundColor    | color of the dialog background                                     | '#FFFFFF'             | string                                               |
+| colorAccent        | color of the action text                                           | '#51BC78'             | string                                               |
+| pickerTextcolor    | color of picker items text                                         | #000000               | string                                               |
+| scrolled           | whether the form is in scrolled mode                               | false                 | bool                                                 |
+| androidRippleColor | color of the android ripple effect on buttons and list items       | #ccc                  | string                                               |
 
 ## MultiPickerMaterialDialog
 
@@ -148,21 +149,20 @@ import { MultiPickerMaterialDialog } from 'react-native-material-dialog';
 
 ## Props
 
-| Name            | Description                                                        | Default/Required      | Type                                                 |
-| --------------- | ------------------------------------------------------------------ | --------------------- | ---------------------------------------------------- |
-| visible         | shows or hides the dialog                                          | required              | bool                                                 |
-| items           | list of options to choose from                                     | required              | array of objects with a 'label' and 'value' property |
-| selectedItems   | items that will be selected when opening the dialog                | required              | array of objects with a 'label' and 'value' property |
-| onCancel        | callback when the dialog is closed or the cancel action is pressed | required              | func                                                 |
-| onOk            | callback when the ok action is pressed                             | undefined             | func                                                 |
-| cancelLabel     | label for the cancel action                                        | 'CANCEL'              | string                                               |
-| okLabel         | label for the ok action                                            | 'OK'                  | string                                               |
-| title           | text for the dialog title                                          | undefined             | string                                               |
-| titleColor      | color of the dialog title                                          | 'rgba(0, 0, 0, 0.87)' | string                                               |
-| backgroundColor | color of the dialog background                                     | '#FFFFFF'             | string                                               |
-| colorAccent     | color of the action text                                           | '#51BC78'             | string                                               |
-| pickerTextcolor | color of picker items text                                         | #000000               | string                                               |
-| scrolled        | whether the form is in scrolled mode                               | false                 | bool                                                 |
+| Name               | Description                                                        | Default/Required      | Type                                                 |
+| ---------------- - | ------------------------------------------------------------------ | --------------------- | ---------------------------------------------------- |
+| visible            | shows or hides the dialog                                          | required              | bool                                                 |
+| items              | list of options to choose from                                     | required              | array of objects with a 'label' and 'value' property |
+| selectedItems      | items that will be selected when opening the dialog                | required              | array of objects with a 'label' and 'value' property |
+| onCancel           | callback when the dialog is closed or the cancel action is pressed | required              | func                                                 |
+| onOk               | callback when the ok action is pressed                             | undefined             | func                                                 |
+| cancelLabel        | label for the cancel action                                        | 'CANCEL'              | string                                               |
+| okLabel            | label for the ok action                                            | 'OK'                  | string                                               |
+| title              | text for the dialog title                                          | undefined             | string                                               |
+| titleColor         | color of the dialog title                                          | 'rgba(0, 0, 0, 0.87)' | string                                               |
+| backgroundColor    | color of the dialog background                                     | '#FFFFFF'             | string                                               |
+| colorAccent        | color of the action text                                           | '#51BC78'             | string                                               |
+| scrolled           | whether the form is in scrolled mode                               | false                 | bool                                                 |
 
 ## References
 

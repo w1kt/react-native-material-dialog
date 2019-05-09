@@ -39,8 +39,8 @@ export default class SinglePickerMaterialDialog extends Component {
   keyExtractor = item => String(item.value);
 
   renderItem = ({ item, index }) => (
-    <TouchableNativeFeedback 
-      background={TouchableNativeFeedback.Ripple("#ccc")}
+    <TouchableNativeFeedback
+      background={TouchableNativeFeedback.Ripple(this.props.androidRippleColor)}
       onPress={() => this.onPressItem(item.value)}
     >
       <View style={styles.rowContainer}>
@@ -55,7 +55,9 @@ export default class SinglePickerMaterialDialog extends Component {
             size={24}
           />
         </View>
-        <Text style={[material.subheading, { color: this.props.pickerTextColor }]}>
+        <Text
+          style={[material.subheading, { color: this.props.pickerTextColor }]}
+        >
           {item.label}
         </Text>
       </View>
@@ -122,7 +124,8 @@ SinglePickerMaterialDialog.propTypes = {
   onOk: PropTypes.func.isRequired,
   cancelLabel: PropTypes.string,
   okLabel: PropTypes.string,
-  scrolled: PropTypes.bool
+  scrolled: PropTypes.bool,
+  androidRippleColor: PropTypes.string
 };
 
 SinglePickerMaterialDialog.defaultProps = {
@@ -134,5 +137,6 @@ SinglePickerMaterialDialog.defaultProps = {
   colorAccent: colors.androidColorAccent,
   cancelLabel: undefined,
   okLabel: undefined,
-  scrolled: false
+  scrolled: false,
+  androidRippleColor: colors.androidRippleColor
 };

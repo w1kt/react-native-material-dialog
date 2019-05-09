@@ -7,4 +7,5 @@ export default {
   androidPressedUnderlay: '#F0F0F0',
   androidBorderColor: '#DCDCDC',
   androidPrimaryTextColor: 'rgba(0, 0, 0, 0.87)',
+  androidRippleColor: "#ccc"
 };
