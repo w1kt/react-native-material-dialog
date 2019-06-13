@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 import {
   StyleSheet,
   Text,
-  TouchableNativeFeedback,
   View,
-  FlatList
+  FlatList,
+  TouchableNativeFeedback
 } from 'react-native';
 import { material } from 'react-native-typography';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import MaterialDialog from './MaterialDialog';
 
 import colors from './colors';
+// import { TouchableNativeFeedback } from 'react-native-gesture-handler';
 
 export default class SinglePickerMaterialDialog extends Component {
   constructor(props) {
@@ -51,12 +52,24 @@ export default class SinglePickerMaterialDialog extends Component {
                 ? 'radio-button-checked'
                 : 'radio-button-unchecked'
             }
-            color={this.props.colorAccent}
+            color={
+              index === this.state.selectedIndex
+                ? this.props.colorAccent
+                : this.props.borderColor
+            }
             size={24}
           />
         </View>
         <Text
-          style={[material.subheading, { color: this.props.pickerTextColor }]}
+          style={[
+            material.subheading,
+            {
+              color:
+                index === this.state.selectedIndex
+                  ? this.props.colorAccent
+                  : this.props.borderColor
+            }
+          ]}
         >
           {item.label}
         </Text>
