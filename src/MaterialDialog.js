@@ -38,6 +38,7 @@ const MaterialDialog = ({
   titleColor,
   colorAccent,
   backgroundColor,
+  borderColor,
   addPadding,
   onOk,
   onCancel,
@@ -66,7 +67,7 @@ const MaterialDialog = ({
             <TouchableWithoutFeedback>
               <View>
                 {title != null ? (
-                  <View style={scrolled ? styles.titleContainerScrolled : styles.titleContainer}>
+                  <View style={scrolled ? [ styles.titleContainerScrolled, { borderColor } ] : styles.titleContainer}>
                     <Text style={[material.title, { color: titleColor }]}>{title}</Text>
                   </View>
                 ) : null}
@@ -84,7 +85,7 @@ const MaterialDialog = ({
                 </View>
                 {onOk != null && onCancel != null ? (
                   <View
-                    style={scrolled ? styles.actionsContainerScrolled : styles.actionsContainer}
+                    style={scrolled ? [ styles.actionsContainerScrolled, { borderColor } ] : styles.actionsContainer}
                   >
                     <ActionButton
                       testID="dialog-cancel-button"
@@ -142,7 +143,6 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderColor: colors.androidBorderColor,
   },
   contentContainer: {
     flex: -1,
@@ -172,7 +172,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingLeft: 8,
     borderTopWidth: StyleSheet.hairlineWidth,
-    borderColor: colors.androidBorderColor,
   },
   actionContainer: {
     marginRight: 8,
@@ -195,6 +194,7 @@ MaterialDialog.propTypes = {
   title: PropTypes.string,
   titleColor: PropTypes.string,
   backgroundColor: PropTypes.string,
+  borderColor: Proptypes.string,
   colorAccent: PropTypes.string,
   scrolled: PropTypes.bool,
   addPadding: PropTypes.bool,
@@ -206,6 +206,7 @@ MaterialDialog.defaultProps = {
   title: undefined,
   titleColor: colors.androidPrimaryTextColor,
   backgroundColor: colors.background,
+  borderColor: color.borderColor,
   colorAccent: colors.androidColorAccent,
   scrolled: false,
   addPadding: true,
