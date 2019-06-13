@@ -61,6 +61,11 @@ interface Dialog {
   backgroundColor?: string;
 
   /**
+   * Color of borders when modal is scrollable
+   */
+  borderColor?: string;
+
+  /**
    * Accent color used on the buttons and elements
    *
    * Default is '#51BC78'
