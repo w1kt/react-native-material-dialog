@@ -206,7 +206,7 @@ MaterialDialog.defaultProps = {
   title: undefined,
   titleColor: colors.androidPrimaryTextColor,
   backgroundColor: colors.background,
-  borderColor: colors.borderColor,
+  borderColor: undefined,
   colorAccent: colors.androidColorAccent,
   scrolled: false,
   addPadding: true,

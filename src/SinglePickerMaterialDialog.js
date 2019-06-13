@@ -135,7 +135,7 @@ SinglePickerMaterialDialog.defaultProps = {
   title: undefined,
   titleColor: undefined,
   backgroundColor: colors.background,
-  borderColor: colors.borderColor,
+  borderColor: undefined,
   pickerTextColor: colors.androidPrimaryTextColor,
   colorAccent: colors.androidColorAccent,
   cancelLabel: undefined,
