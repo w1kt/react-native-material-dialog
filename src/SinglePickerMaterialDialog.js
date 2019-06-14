@@ -64,6 +64,7 @@ export default class SinglePickerMaterialDialog extends Component {
           style={[
             material.subheading,
             {
+              flexShrink: 1,
               color:
                 index === this.state.selectedIndex
                   ? this.props.colorAccent
