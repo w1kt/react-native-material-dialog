@@ -97,6 +97,11 @@ interface Dialog {
    * Default is false
    */
   scrolled?: boolean;
+  
+  /**
+   * color of the Android ripple effect on buttons and list items
+   */
+  androidRippleColor?: string;
 }
 
 interface MaterialDialogStatic extends Dialog {
@@ -156,12 +161,7 @@ interface SinglePickerMaterialDialogStatic extends Dialog {
   /**
    * Text color for Picker items
    */
-  pickerTextColor: string;
-  
-  /**
-   * color of the Android ripple effect on buttons and list items
-   */
-  androidRippleColor: string;
+  pickerTextColor?: string;
 }
 
 interface MultiPickerMaterialDialogStatic extends Dialog {
@@ -190,7 +190,7 @@ interface MultiPickerMaterialDialogStatic extends Dialog {
   /**
    * Text color for Picker items
    */
-  pickerTextColor: string
+  pickerTextColor?: string
 }
 
 export class MaterialDialog extends React.Component<MaterialDialogStatic> {}
