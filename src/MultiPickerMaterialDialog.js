@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
   FlatList,
   TouchableNativeFeedback
@@ -30,7 +29,27 @@ export default class MultiPickerMaterialDialog extends Component {
   onPressItem(value) {
     this.setState(prevState => {
       const selected = new Map(prevState.selected);
-      selected.set(value, !selected.get(value));
+        selected.set(value, !selected.get(value));
+      return { selected };
+    });
+  }
+
+  onAll() {
+    this.setState(prevState => {
+      const selected = new Map(prevState.selected);
+      this.props.items.forEach(item => {
+        selected.set(item.value, true);
+      });
+      return { selected };
+    });
+  }
+  
+  onClear() {
+    this.setState(prevState => {
+      const selected = new Map(prevState.selected);
+      this.props.items.forEach(item => {
+        selected.set(item.value, false);
+      });
       return { selected };
     });
   }
@@ -88,6 +107,10 @@ export default class MultiPickerMaterialDialog extends Component {
         }
         cancelLabel={this.props.cancelLabel}
         onCancel={this.props.onCancel}
+        allButton={this.props.allButton}
+        clearButton={this.props.clearButton}
+        onAll={() => this.onAll()}
+        onClear={() => this.onClear()}
       >
         <FlatList
           data={this.props.items}
@@ -129,7 +152,9 @@ MultiPickerMaterialDialog.propTypes = {
   cancelLabel: PropTypes.string,
   okLabel: PropTypes.string,
   scrolled: PropTypes.bool,
-  androidRippleColor: PropTypes.string
+  androidRippleColor: PropTypes.string,
+  allButton: PropTypes.bool,
+  clearButton: PropTypes.bool
 };
 
 MultiPickerMaterialDialog.defaultProps = {
@@ -142,5 +167,7 @@ MultiPickerMaterialDialog.defaultProps = {
   cancelLabel: undefined,
   okLabel: undefined,
   scrolled: false,
-  androidRippleColor: colors.androidRippleColor
+  androidRippleColor: colors.androidRippleColor,
+  allButton: false,
+  clearButton: false
 };

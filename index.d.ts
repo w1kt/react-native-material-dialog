@@ -190,7 +190,11 @@ interface MultiPickerMaterialDialogStatic extends Dialog {
   /**
    * Text color for Picker items
    */
-  pickerTextColor?: string
+  pickerTextColor?: string;
+
+  allButton?: boolean;
+
+  clearButton?: boolean
 }
 
 export class MaterialDialog extends React.Component<MaterialDialogStatic> {}

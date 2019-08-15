@@ -9,7 +9,7 @@ import {
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
   View,
-  Dimensions,
+  Dimensions
 } from 'react-native';
 import colors from './colors';
 import { material } from 'react-native-typography';
@@ -45,6 +45,10 @@ const MaterialDialog = ({
   okLabel,
   cancelLabel,
   children,
+  allButton,
+  clearButton,
+  onAll,
+  onClear
 }) => (
   <Modal
     animationType={'fade'}
@@ -56,37 +60,72 @@ const MaterialDialog = ({
   >
     <TouchableWithoutFeedback onPress={onCancel}>
       <View style={styles.backgroundOverlay}>
-        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : null}>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : null}
+        >
           <View
             style={[
               styles.modalContainer,
-              (title != null || (addPadding && title == null)) && styles.modalContainerPadding,
-              { backgroundColor },
+              (title != null || (addPadding && title == null)) &&
+                styles.modalContainerPadding,
+              { backgroundColor }
             ]}
           >
             <TouchableWithoutFeedback>
               <View>
                 {title != null ? (
-                  <View style={scrolled ? [ styles.titleContainerScrolled, { borderColor } ] : styles.titleContainer}>
-                    <Text style={[material.title, { color: titleColor }]}>{title}</Text>
+                  <View
+                    style={
+                      scrolled
+                        ? [styles.titleContainerScrolled, { borderColor }]
+                        : styles.titleContainer
+                    }
+                  >
+                    <Text style={[material.title, { color: titleColor }]}>
+                      {title}
+                    </Text>
                   </View>
                 ) : null}
                 <View
                   style={
                     scrolled
                       ? [
-                        styles.contentContainerScrolled,
-                        addPadding && styles.contentContainerScrolledPadding,
-                      ]
-                      : [styles.contentContainer, addPadding && styles.contentContainerPadding]
+                          styles.contentContainerScrolled,
+                          addPadding && styles.contentContainerScrolledPadding
+                        ]
+                      : [
+                          styles.contentContainer,
+                          addPadding && styles.contentContainerPadding
+                        ]
                   }
                 >
                   {children}
                 </View>
                 {onOk != null && onCancel != null ? (
                   <View
-                    style={scrolled ? [ styles.actionsContainerScrolled, { borderColor } ] : styles.actionsContainer}
+                    style={
+                      scrolled
+                        ? [styles.actionsContainerScrolled, { borderColor }]
+                        : styles.actionsContainer
+                    }
                   >
+                    {allButton && (
+                      <ActionButton
+                        testID="dialog-all-button"
+                        colorAccent={colorAccent}
+                        onPress={onAll}
+                        label="ALL"
+                      />
+                    )}
+                    {clearButton && (
+                      <ActionButton
+                        testID="dialog-clear-button"
+                        colorAccent={colorAccent}
+                        colorAccent={colorAccent}
+                        onPress={onClear}
+                        label="CLEAR"
+                      />
+                    )}
                     <ActionButton
                       testID="dialog-cancel-button"
                       colorAccent={colorAccent}
@@ -116,7 +155,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.backgroundOverlay,
+    backgroundColor: colors.backgroundOverlay
   },
   modalContainer: {
     marginHorizontal: 16,
@@ -124,17 +163,17 @@ const styles = StyleSheet.create({
     minWidth: 280,
     borderRadius: 2,
     elevation: 24,
-    overflow: 'hidden',
+    overflow: 'hidden'
   },
   modalContainerPadding: {
-    paddingTop: 24,
+    paddingTop: 24
   },
   titleContainer: {
     paddingHorizontal: 24,
     paddingBottom: 20,
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   titleContainerScrolled: {
     paddingHorizontal: 24,
@@ -142,18 +181,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: StyleSheet.hairlineWidth
   },
   contentContainer: {
-    flex: -1,
+    flex: -1
   },
   contentContainerPadding: {
     paddingHorizontal: 24,
-    paddingBottom: 24,
+    paddingBottom: 24
   },
   contentContainerScrolled: {
     flex: -1,
-    maxHeight: height - 264, // (106px vertical margin * 2) + 52px
+    maxHeight: height - 264 // (106px vertical margin * 2) + 52px
   },
   contentContainerScrolledPadding: {
     // paddingHorizontal: 24,
@@ -163,7 +202,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'center',
-    paddingLeft: 8,
+    paddingLeft: 8
   },
   actionsContainerScrolled: {
     height: 52,
@@ -171,7 +210,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center',
     paddingLeft: 8,
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: StyleSheet.hairlineWidth
   },
   actionContainer: {
     marginRight: 8,
@@ -180,8 +219,8 @@ const styles = StyleSheet.create({
     minWidth: 64,
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
-  },
+    alignItems: 'center'
+  }
 });
 
 MaterialDialog.propTypes = {
@@ -198,6 +237,8 @@ MaterialDialog.propTypes = {
   colorAccent: PropTypes.string,
   scrolled: PropTypes.bool,
   addPadding: PropTypes.bool,
+  allButton: PropTypes.bool,
+  clearButton: PropTypes.bool
 };
 
 MaterialDialog.defaultProps = {
@@ -212,13 +253,17 @@ MaterialDialog.defaultProps = {
   addPadding: true,
   onOk: undefined,
   onCancel: undefined,
+  allButton: false,
+  clearButton: false,
+  onAll: undefined,
+  onClear: undefined
 };
 
 ActionButton.propTypes = {
   testID: PropTypes.string.isRequired,
   colorAccent: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  onPress: PropTypes.func.isRequired,
+  onPress: PropTypes.func.isRequired
 };
 
 export default MaterialDialog;
